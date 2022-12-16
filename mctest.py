@@ -22,27 +22,22 @@ def calculate():
     # clear output 
     output_text.delete(0.0, tk.END)
 
-    # Get the values entered by the user
-    x11 = x11_entry.get()
-    z11 = z11_entry.get()
-
+    # Get the values entered by the user and convert them to ints
+    try:
+        x11 = x11_entry.get()
+        x11 = int(x11)
+        z11 = z11_entry.get()
+        z11 = int(z11)
+    except:
+        display_output("Error: Please enter a number in both input fields.")
+        return
+        
     # Check if the user has entered a value in the input fields
     if x11 == "" or z11 == "":
         # Display an error message if one or both of the input fields are empty
         display_output("Error: Please enter a value in both input fields.")
         return
 
-    # Check if the user has entered an integer in the input fields
-    if x11 is not int or z11 is not int:
-        # Display an error message if one or both of the input fields are empty
-        display_output("Error: Please enter a number in both input fields.")
-        return
-    
-    # Convert the user-entered values to integers
-    x11 = int(x11)
-    z11 = int(z11)
-
-    
     # distance from 0,0 (radius)
     r1 = int(math.sqrt((x11**2 + z11**2)))
  
@@ -130,6 +125,3 @@ output_text.pack()
 
 def display_output(output):
     output_text.insert(tk.END, output)
-
-
-
