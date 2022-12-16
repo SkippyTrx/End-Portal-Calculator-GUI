@@ -1,6 +1,6 @@
 INSTRUCTIONS
 
-Press end-portal-calculator.exe to run
+Install python IDLE, open mctest.py, press f5 to run
 
 Enter X and Z coordinates in corresponding text boxes
 
